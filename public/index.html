@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل Kia - ورود</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1>🔥 Kia Panel</h1>
+            <p class="subtitle">ورود به پنل مدیریت</p>
+            <form id="loginForm">
+                <input type="password" id="password" placeholder="رمز عبور پنل" required>
+                <button type="submit">ورود به پنل</button>
+            </form>
+            <div class="footer">
+                <p>طراحی و توسعه: @kiarash1792</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            localStorage.setItem('panelPassword', password);
+            window.location.href = '/dashboard';
+        });
+    </script>
+</body>
+</html>
